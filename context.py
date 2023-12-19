@@ -32,8 +32,8 @@ class BoneMapping(bpy.types.PropertyGroup):
 class IKLimb(bpy.types.PropertyGroup):
 	name: bpy.props.StringProperty()
 	enabled: bpy.props.BoolProperty(default=False)
-	target_bone: bpy.props.StringProperty(update=lambda self, ctx: update_ik_limbs(bpy.context.object.retargeting_context))
-	origin_bone: bpy.props.StringProperty(update=lambda self, ctx: update_ik_limbs(bpy.context.object.retargeting_context))
+	target_bone: bpy.props.StringProperty(update=lambda self, ctx: update_ik_limbs(bpy.ctx.object.retargeting_context))
+	origin_bone: bpy.props.StringProperty(update=lambda self, ctx: update_ik_limbs(bpy.ctx.object.retargeting_context))
 	target_empty: bpy.props.PointerProperty(type=bpy.types.Object)
 	target_empty_child: bpy.props.PointerProperty(type=bpy.types.Object)
 	pole_empty: bpy.props.PointerProperty(type=bpy.types.Object)
